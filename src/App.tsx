@@ -1,9 +1,10 @@
-import { AppLayout } from "./components/AppLayout";
+import "./App.css";
+import { SideBar } from "./components/SideBar";
 
 function App() {
   return (
     <>
-      <AppLayout />
+      <SideBar />
     </>
   );
 }
