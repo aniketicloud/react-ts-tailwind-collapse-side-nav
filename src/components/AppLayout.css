@@ -1,0 +1,44 @@
+.app-layout {
+  display: grid;
+  row-gap: 0.5em;
+
+  grid:
+    "header" min-content
+    "nav" min-content
+    "main" 1fr
+    "footer" min-content /
+    1fr;
+}
+
+@media screen and (min-width: 640px) {
+  .app-layout {
+    grid:
+      "header header" min-content
+      "nav main" 1fr
+      "footer footer" min-content/
+      min-content 1fr;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .app-layout {
+    grid:
+      "header header header" min-content
+      "nav main main" 1fr
+      "footer footer footer" min-content/
+      min-content 1fr 1fr;
+  }
+}
+
+header {
+  grid-area: header;
+}
+nav {
+  grid-area: nav;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+}
