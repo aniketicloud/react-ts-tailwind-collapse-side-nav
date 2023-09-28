@@ -15,7 +15,7 @@
     grid:
       "header header" min-content
       "nav main" 1fr
-      "footer footer" min-content/
+      "nav footer" min-content/
       min-content 1fr;
   }
 }
@@ -25,7 +25,7 @@
     grid:
       "header header header" min-content
       "nav main main" 1fr
-      "footer footer footer" min-content/
+      "nav footer footer" min-content/
       min-content 1fr 1fr;
   }
 }

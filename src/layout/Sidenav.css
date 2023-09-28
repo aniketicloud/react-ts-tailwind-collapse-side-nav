@@ -1,3 +1,4 @@
 a.active > span {
   text-decoration: underline;
+  color: white;
 }
