@@ -16,7 +16,7 @@ export const AppLayout = () => {
 
   return (
     <BrowserRouter>
-      <div className="h-screen bg-slate-400 app-layout">
+      <div className="h-screen app-layout">
         <Header isExpanded={isExpanded} onLogoClick={handleLogoClick} />
         <SideNav isExpanded={isExpanded} />
         <main>
