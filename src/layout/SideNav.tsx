@@ -11,7 +11,7 @@ interface SideNavProps {
 
 export const SideNav: FC<SideNavProps> = ({ isExpanded }) => {
   return (
-    <nav className="bg-gray-50 px-3 py-4 rounded-lg">
+    <nav className="bg-blue-400 px-3 py-4">
       <ul className="mt-4 space-y-2 font-medium">
         <li>
           <NavLink

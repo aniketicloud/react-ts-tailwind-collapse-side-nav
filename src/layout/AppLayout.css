@@ -1,6 +1,6 @@
 .app-layout {
   display: grid;
-  row-gap: 0.5em;
+  /* row-gap: 0.5em; */
 
   grid:
     "header" min-content
