@@ -11,10 +11,10 @@ interface SideNavProps {
 }
 
 export const SideNav: FC<SideNavProps> = ({ isExpanded }) => {
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
   return (
     <nav className="bg-blue-400 px-3 py-4">
-      <ul className="mt-4 space-y-2 font-medium">
+      <ul className={`mt-4  font-medium ${width < 640 ? "flex" : "space-y-2"}`}>
         <li>
           <NavLink
             to="/"
@@ -35,9 +35,6 @@ export const SideNav: FC<SideNavProps> = ({ isExpanded }) => {
           </NavLink>
         </li>
       </ul>
-
-      <li>Height: {height}</li>
-      <li>width: {width}</li>
     </nav>
   );
 };
