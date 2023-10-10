@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { BarsFour } from "../components/icons/BarsFour";
 import { BarsTwo } from "../components/icons/BarsTwo";
+import profile_pic from "../assets/profile_pic.jpg";
 
 interface HeaderProps {
   isExpanded: boolean;
@@ -25,7 +26,7 @@ export const Header: FC<HeaderProps> = ({ isExpanded, onLogoClick }) => {
       <span>Third item</span>
       <div className="relative">
         <img
-          src="profile_pic.jpg"
+          src={profile_pic}
           alt="profile picture"
           className="w-10 h10 p-1 rounded-full ring-2 ring-gray-300"
         />

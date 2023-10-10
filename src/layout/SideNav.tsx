@@ -5,6 +5,7 @@ import { ComputerDesktop } from "../components/icons/ComputerDesktop";
 import { AcademicCap } from "../components/icons/AcademicCap";
 import "./Sidenav.css";
 import { useWindowDimensions } from "../hooks/useWindowDimension";
+import { Beaker } from "../components/icons/Beaker";
 
 interface SideNavProps {
   isExpanded: boolean;
@@ -32,6 +33,16 @@ export const SideNav: FC<SideNavProps> = ({ isExpanded }) => {
           >
             <AcademicCap />
             {isExpanded && <span>Courses</span>}
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink
+            to="/tests"
+            className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100"
+          >
+            <Beaker />
+            {isExpanded && <span>Tests</span>}
           </NavLink>
         </li>
       </ul>

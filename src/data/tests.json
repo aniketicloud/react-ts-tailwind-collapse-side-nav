@@ -1,0 +1,26 @@
+{
+  "react": [
+    {
+      "id": "0001",
+      "title": "React beginners test",
+      "description": "This really tests the basics of the react. Learn the basics from react.dev again to get better."
+    },
+    {
+      "id": "0002",
+      "title": "React router test",
+      "description": "This test takes you on the path of react router. Check where you end up after taking this test."
+    }
+  ],
+  "vue": [
+    {
+      "id": "0003",
+      "title": "Vue 2",
+      "description": "Even thought the support of this framework is ending on last month of the 2023. There are so many active projects."
+    },
+    {
+      "id": "0004",
+      "title": "Vue 3",
+      "description": "New revolution in Vue. Everything is faster and better. Take this challenge to prove your worth. Prove that you know things."
+    }
+  ]
+}
