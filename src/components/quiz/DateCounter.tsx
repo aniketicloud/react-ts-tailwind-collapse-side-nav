@@ -1,9 +1,31 @@
 import { ChangeEventHandler, useReducer, useState } from "react";
 
-const reducer = () => {};
+enum CountActionType {
+  INCREASE,
+  DECREASE,
+  SETCOUNT,
+}
+interface CountAction {
+  type: CountActionType;
+  payload: number;
+}
+const reducer = (state: number, action: CountAction) => {
+  const { type, payload } = action;
+  switch (type) {
+    case CountActionType.INCREASE:
+      return payload + state;
+
+    case CountActionType.DECREASE:
+      return state - payload;
+
+    case CountActionType.SETCOUNT:
+      return payload;
+  }
+};
+
 export const DateCounter = () => {
-  const [count, setCount] = useState(0);
-  // const [count, dispatch] = useReducer(reducer, 0);
+  // const [count, setCount] = useState(0);
+  const [count, dispatch] = useReducer(reducer, 0);
 
   const [step, setStep] = useState(1);
 
@@ -12,17 +34,16 @@ export const DateCounter = () => {
   date.setDate(date.getDate() + count);
 
   const dec = function () {
-    // setCount((count) => count - 1);
-    setCount((count) => count - step);
+    dispatch({ type: CountActionType.DECREASE, payload: step });
   };
 
   const inc = function () {
     // setCount((count) => count + 1);
-    setCount((count) => count + step);
+    dispatch({ type: CountActionType.INCREASE, payload: step });
   };
 
   const defineCount: ChangeEventHandler<HTMLInputElement> = function (e) {
-    setCount(Number(e.target.value));
+    dispatch({ type: CountActionType.SETCOUNT, payload: +e.target.value });
   };
 
   const defineStep: ChangeEventHandler<HTMLInputElement> = function (e) {
@@ -30,7 +51,8 @@ export const DateCounter = () => {
   };
 
   const reset = function () {
-    setCount(0);
+    dispatch({ type: CountActionType.SETCOUNT, payload: 0 });
+
     setStep(1);
   };
 
