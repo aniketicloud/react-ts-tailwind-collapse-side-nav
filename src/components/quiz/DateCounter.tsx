@@ -1,7 +1,10 @@
-import { ChangeEventHandler, useState } from "react";
-import "./DateCounter.css";
+import { ChangeEventHandler, useReducer, useState } from "react";
+
+const reducer = () => {};
 export const DateCounter = () => {
   const [count, setCount] = useState(0);
+  // const [count, dispatch] = useReducer(reducer, 0);
+
   const [step, setStep] = useState(1);
 
   // This mutates the date object.
