@@ -9,9 +9,11 @@ import { useState } from "react";
 import { CoursePage } from "../pages/CoursePage";
 import { TestList } from "../pages/TestList";
 import { TestPage } from "../pages/TestPage";
+import { useWindowDimensions } from "../hooks/useWindowDimension";
 
 export const AppLayout = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const { width } = useWindowDimensions();
 
   const handleLogoClick = () => {
     setIsExpanded(!isExpanded);
@@ -21,7 +23,8 @@ export const AppLayout = () => {
     <BrowserRouter>
       <div className="h-screen app-layout">
         <Header isExpanded={isExpanded} onLogoClick={handleLogoClick} />
-        <SideNav isExpanded={isExpanded} />
+        {width > 640 && <SideNav isExpanded={isExpanded} />}
+
         <main>
           <Routes>
             <Route path="/" element={<Dashboard />} />

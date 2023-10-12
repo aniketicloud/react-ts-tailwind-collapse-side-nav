@@ -2,6 +2,7 @@ import { FC } from "react";
 import { BarsFour } from "../components/icons/BarsFour";
 import { BarsTwo } from "../components/icons/BarsTwo";
 import profile_pic from "../assets/profile_pic.jpg";
+import { useWindowDimensions } from "../hooks/useWindowDimension";
 
 interface HeaderProps {
   isExpanded: boolean;
@@ -9,18 +10,24 @@ interface HeaderProps {
 }
 
 export const Header: FC<HeaderProps> = ({ isExpanded, onLogoClick }) => {
+  const { width } = useWindowDimensions();
+
   const handleLogoClick = () => {
     onLogoClick();
   };
 
   return (
     <header className="flex items-center justify-between bg-blue-400 px-4 py-3 text-white capitalize">
-      <button onClick={handleLogoClick}>
-        <div className="flex">
-          {isExpanded ? <BarsTwo /> : <BarsFour />}
-          {isExpanded && "YOTA"}
-        </div>
-      </button>
+      {width < 640 ? (
+        <BarsFour />
+      ) : (
+        <button onClick={handleLogoClick}>
+          <div className="flex">
+            {isExpanded ? <BarsTwo /> : <BarsFour />}
+            {isExpanded && "YOTA"}
+          </div>
+        </button>
+      )}
 
       <span>second item</span>
       <span>Third item</span>

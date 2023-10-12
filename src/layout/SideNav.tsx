@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import { ComputerDesktop } from "../components/icons/ComputerDesktop";
 import { AcademicCap } from "../components/icons/AcademicCap";
 import "./Sidenav.css";
-import { useWindowDimensions } from "../hooks/useWindowDimension";
 import { Beaker } from "../components/icons/Beaker";
 
 interface SideNavProps {
@@ -12,10 +11,9 @@ interface SideNavProps {
 }
 
 export const SideNav: FC<SideNavProps> = ({ isExpanded }) => {
-  const { width } = useWindowDimensions();
   return (
     <nav className="bg-blue-400 px-3 py-4">
-      <ul className={`mt-4  font-medium ${width < 640 ? "flex" : "space-y-2"}`}>
+      <ul className={`mt-4  font-medium `}>
         <li>
           <NavLink
             to="/"
