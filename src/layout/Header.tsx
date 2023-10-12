@@ -3,6 +3,7 @@ import { BarsFour } from "../components/icons/BarsFour";
 import { BarsTwo } from "../components/icons/BarsTwo";
 import profile_pic from "../assets/profile_pic.jpg";
 import { useWindowDimensions } from "../hooks/useWindowDimension";
+import { HamburgerMenu } from "../components/HamburgerMenu";
 
 interface HeaderProps {
   isExpanded: boolean;
@@ -19,7 +20,7 @@ export const Header: FC<HeaderProps> = ({ isExpanded, onLogoClick }) => {
   return (
     <header className="flex items-center justify-between bg-blue-400 px-4 py-3 text-white capitalize">
       {width < 640 ? (
-        <BarsFour />
+        <HamburgerMenu />
       ) : (
         <button onClick={handleLogoClick}>
           <div className="flex">
